@@ -1,0 +1,82 @@
+import { Card, CardContent } from "@/components/ui/card"; import { Button } from "@/components/ui/button"; import { Input } from "@/components/ui/input"; import { useState } from "react";
+
+export default function ChatbotLandingPage() { const [email, setEmail] = useState(""); const [message, setMessage] = useState("");
+
+return ( <div className="min-h-screen bg-gradient-to-r from-blue-500 to-purple-600 flex flex-col items-center justify-center p-4 text-white"> <h1 className="text-4xl md:text-6xl font-bold mb-4 text-center">QuickBot Solutions</h1> <p className="text-lg md:text-2xl mb-6 text-center max-w-xl"> Custom AI Chatbots that help your business capture leads, answer customer questions, and work 24/7 — so you don't have to. </p> <Card className="w-full max-w-md bg-white text-black shadow-xl p-6"> <CardContent> <h2 className="text-2xl font-semibold mb-4 text-center">Get a Free Chatbot Demo</h2> <Input type="email" placeholder="Enter your email" value={email} onChange={(e) => setEmail(e.target.value)} className="mb-4" /> <Button className="w-full">Request Demo</Button> </CardContent> </Card>
+
+<div className="mt-12 max-w-3xl grid gap-6 grid-cols-1 md:grid-cols-3 text-center">
+    <div>
+      <h3 className="text-xl font-bold mb-2">Lead Generation</h3>
+      <p>Capture potential customers automatically with smart, conversational bots.</p>
+    </div>
+    <div>
+      <h3 className="text-xl font-bold mb-2">24/7 Customer Support</h3>
+      <p>Answer FAQs, book appointments, or assist customers even outside business hours.</p>
+    </div>
+    <div>
+      <h3 className="text-xl font-bold mb-2">Tailored to Your Business</h3>
+      <p>We build chatbots customized to your industry, brand, and specific needs.</p>
+    </div>
+  </div>
+
+  <div className="mt-16 max-w-3xl text-center">
+    <h2 className="text-3xl font-bold mb-4">Try Our Demo Chatbot Below</h2>
+    <Card className="p-6 bg-white text-black">
+      <CardContent>
+        <p className="mb-2">Bot: 👋 Hi there! How can I help you today?</p>
+        <div className="flex flex-col space-y-2">
+          <Button variant="outline">I'm looking to buy</Button>
+          <Button variant="outline">I'm looking to sell</Button>
+          <Button variant="outline">I want to rent</Button>
+          <Button variant="outline">Just browsing</Button>
+        </div>
+      </CardContent>
+    </Card>
+  </div>
+
+  <div className="mt-16 max-w-3xl text-center">
+    <h2 className="text-3xl font-bold mb-4">Simple Pricing</h2>
+    <div className="grid gap-6 grid-cols-1 md:grid-cols-3">
+      <Card className="p-4 bg-white text-black">
+        <CardContent>
+          <h3 className="text-xl font-bold mb-2">Starter</h3>
+          <p>$200 setup + $20/month</p>
+          <p className="mt-2">Basic chatbot with pre-built templates. Great for FAQs and simple lead capture.</p>
+        </CardContent>
+      </Card>
+      <Card className="p-4 bg-white text-black">
+        <CardContent>
+          <h3 className="text-xl font-bold mb-2">Custom</h3>
+          <p>$500 - $1500 setup + $50/month</p>
+          <p className="mt-2">Fully tailored chatbot to match your brand and specific business needs.</p>
+        </CardContent>
+      </Card>
+      <Card className="p-4 bg-white text-black">
+        <CardContent>
+          <h3 className="text-xl font-bold mb-2">Enterprise</h3>
+          <p>Custom Pricing</p>
+          <p className="mt-2">Advanced bots with integrations, AI, and complex features for larger businesses.</p>
+        </CardContent>
+      </Card>
+    </div>
+  </div>
+
+  <div className="mt-16 max-w-3xl text-center">
+    <h2 className="text-3xl font-bold mb-4">Contact Us</h2>
+    <Card className="p-6 bg-white text-black">
+      <CardContent>
+        <Input
+          type="text"
+          placeholder="Your message"
+          value={message}
+          onChange={(e) => setMessage(e.target.value)}
+          className="mb-4"
+        />
+        <Button className="w-full">Send Message</Button>
+      </CardContent>
+    </Card>
+  </div>
+</div>
+
+); }
+
